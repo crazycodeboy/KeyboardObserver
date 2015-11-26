@@ -1,7 +1,7 @@
 #Ios软盘和输入框自适应  
 
 效果演示：
-![image](https://github.com/crazycodeboy/KeyboardObserver/blob/master/res/%E8%BD%AF%E7%9B%98%E9%94%AE%E7%9B%98%E8%87%AA%E9%80%82%E5%BA%94.gif)
+![image](https://github.com/crazycodeboy/KeyboardObserver/blob/master/res/%E8%BD%AF%E7%9B%98%E9%94%AE%E7%9B%98%E8%87%AA%E9%80%82%E5%BA%94.gif =203x380)
  
 ###特点：
 1.当软盘弹出时自动控制输入框的显示位置以防止被软盘遮住  
