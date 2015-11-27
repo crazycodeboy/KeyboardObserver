@@ -9,18 +9,18 @@
 //
 
 #import "ViewController.h"
-//#import "KeyboardObserver.h"
+#import "KeyboardObserver.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-//-(void)viewDidAppear:(BOOL)animated{
-////    [self.tf2 addKeyboardObserver];//为tf2输入框添加监听
-//    [self.view addGlobalKeyboardObserver]; //为界面中所有的输入框添加监听
-//}
-//-(void)viewDidDisappear:(BOOL)animated{
-////    [self.tf2 removeKeyboardObserver];//为tf2输入框移除监听
-//    [self.view removeGlobalKeyboardObserver];//移除界面上所有输入框的监听
-//}
+-(void)viewDidAppear:(BOOL)animated{
+//    [self.tf2 addKeyboardObserver];//为tf2输入框添加监听
+    [self.view addGlobalKeyboardObserver]; //为界面中所有的输入框添加监听
+}
+-(void)viewDidDisappear:(BOOL)animated{
+//    [self.tf2 removeKeyboardObserver];//为tf2输入框移除监听
+    [self.view removeGlobalKeyboardObserver];//移除界面上所有输入框的监听
+}
 @end

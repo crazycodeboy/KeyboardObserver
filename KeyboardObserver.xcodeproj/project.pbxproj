@@ -13,9 +13,9 @@
 		98A856D21C0717F700DB1A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A856D01C0717F700DB1A20 /* LaunchScreen.storyboard */; };
 		98A856DD1C0717F700DB1A20 /* KeyboardObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A856DC1C0717F700DB1A20 /* KeyboardObserverTests.m */; };
 		98A856E81C0717F700DB1A20 /* KeyboardObserverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A856E71C0717F700DB1A20 /* KeyboardObserverUITests.m */; };
-		98A856F91C0718A000DB1A20 /* KeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A856F61C0718A000DB1A20 /* KeyboardObserver.m */; };
 		98A856FA1C0718A000DB1A20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A856F81C0718A000DB1A20 /* ViewController.m */; };
 		98A856FC1C0718A800DB1A20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A856FB1C0718A800DB1A20 /* Main.storyboard */; };
+		98E5344E1C084AFE00E7532B /* KeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E5344D1C084AFE00E7532B /* KeyboardObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +49,11 @@
 		98A856E31C0717F700DB1A20 /* KeyboardObserverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardObserverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A856E71C0717F700DB1A20 /* KeyboardObserverUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardObserverUITests.m; sourceTree = "<group>"; };
 		98A856E91C0717F700DB1A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98A856F51C0718A000DB1A20 /* KeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardObserver.h; sourceTree = "<group>"; };
-		98A856F61C0718A000DB1A20 /* KeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardObserver.m; sourceTree = "<group>"; };
 		98A856F71C0718A000DB1A20 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		98A856F81C0718A000DB1A20 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98A856FB1C0718A800DB1A20 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		98E5344C1C084AFE00E7532B /* KeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardObserver.h; sourceTree = "<group>"; };
+		98E5344D1C084AFE00E7532B /* KeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 		98A856C11C0717F700DB1A20 /* KeyboardObserver */ = {
 			isa = PBXGroup;
 			children = (
-				98A856F51C0718A000DB1A20 /* KeyboardObserver.h */,
-				98A856F61C0718A000DB1A20 /* KeyboardObserver.m */,
+				98E5344C1C084AFE00E7532B /* KeyboardObserver.h */,
+				98E5344D1C084AFE00E7532B /* KeyboardObserver.m */,
 				98A856F71C0718A000DB1A20 /* ViewController.h */,
 				98A856F81C0718A000DB1A20 /* ViewController.m */,
 				98A856FB1C0718A800DB1A20 /* Main.storyboard */,
@@ -280,8 +280,8 @@
 			files = (
 				98A856C71C0717F700DB1A20 /* AppDelegate.m in Sources */,
 				98A856C41C0717F700DB1A20 /* main.m in Sources */,
+				98E5344E1C084AFE00E7532B /* KeyboardObserver.m in Sources */,
 				98A856FA1C0718A000DB1A20 /* ViewController.m in Sources */,
-				98A856F91C0718A000DB1A20 /* KeyboardObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +499,7 @@
 				98A856EE1C0717F700DB1A20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98A856EF1C0717F700DB1A20 /* Build configuration list for PBXNativeTarget "KeyboardObserverTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				98A856F11C0717F700DB1A20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98A856F21C0717F700DB1A20 /* Build configuration list for PBXNativeTarget "KeyboardObserverUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +517,7 @@
 				98A856F41C0717F700DB1A20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
