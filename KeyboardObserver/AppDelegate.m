@@ -2,8 +2,9 @@
 //  AppDelegate.m
 //  KeyboardObserver
 //
-//  Created by OEFFECT on 15/11/26.
+//  Created by JPH on 15/11/26.
 //  Copyright © 2015年 jph. All rights reserved.
+//  Email: crazycodeboy@gmail.com
 //
 
 #import "AppDelegate.h"

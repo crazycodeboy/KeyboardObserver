@@ -3,8 +3,9 @@
 //  Ios软盘和输入框自适应<br>
 //  当软盘弹出时自动控制输入框的显示位置以防止被软盘遮住<br>
 //  当触控输入框以外的位置时或按软盘的回车键时，软盘隐藏，界面恢复
-//  Created by JPH on 15/11/23.
+//  Created by JPH on 15/11/26.
 //  Copyright © 2015年 jph. All rights reserved.
+//  Email: crazycodeboy@gmail.com
 //
 
 #import "ViewController.h"
