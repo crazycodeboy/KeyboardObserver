@@ -11,7 +11,7 @@ UIView *rootView;
 NSMutableArray*inputTextFields;
 #pragma mark - Public Methods
 -(void)addKeyboardObserver{
-     [self registerKeyboardNotifications];
+    [self registerKeyboardNotifications];
     if (inputTextFields==nil) {
         inputTextFields=[[NSMutableArray alloc] init];
     }
@@ -30,7 +30,6 @@ NSMutableArray*inputTextFields;
     [inputTextFields addObject:self];
 }
 -(void)addGlobalKeyboardObserver{
-     [self registerKeyboardNotifications];
     if (inputTextFields==nil) {
         inputTextFields=[[NSMutableArray alloc] init];
     }else{
@@ -48,7 +47,7 @@ NSMutableArray*inputTextFields;
             [self addAllInputTextField:subView inputTextFields:inputTextFields];
         }
         if ([subView isKindOfClass:[UITextField class]]){
-//            [self registerKeyboardNotifications];
+            [self registerKeyboardNotifications];
             [(id)subView setDelegate:self];
             [inputTextFields addObject:subView];
         }
@@ -82,7 +81,8 @@ NSMutableArray*inputTextFields;
     CGFloat kbHeight = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
     //计算出键盘顶端到inputTextView panel底端的距离(加上自定义的缓冲距离INTERVAL_KEYBOARD)
     UITextField*firstResponderTextField=[self getFirstResponderTextField];
-    CGFloat offset = (firstResponderTextField.frame.origin.y+firstResponderTextField.frame.size.height+20) - ([self getRootView:true].frame.size.height - kbHeight);
+    CGFloat y=[self getAbsoluteY:firstResponderTextField];
+    CGFloat offset = (y+firstResponderTextField.frame.size.height+20) - ([self getRootView:true].frame.size.height - kbHeight);
     
     // 取得键盘的动画时间，这样可以在视图上移的时候更连贯
     double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -102,6 +102,25 @@ NSMutableArray*inputTextFields;
     [UIView animateWithDuration:duration animations:^{
         [self getRootView:true].frame = CGRectMake(0, 0, [self getRootView:true].frame.size.width, [self getRootView:true].frame.size.height);
     }];
+}
+/**
+ * 获取targetView所在的UIScrollView
+ */
+-(UIScrollView*)getScrollView:(UIView*)targetView{
+    UIScrollView*scrollView;
+    UIView*superView;
+    while (true) {
+        superView=targetView.superview;
+        if (superView==nil) {
+            break;
+        }else if([superView isKindOfClass:[UIScrollView class]]){
+            scrollView=(UIScrollView*)superView;
+            break;
+        }else{
+            targetView=superView;
+        }
+    }
+    return scrollView;
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [[self getFirstResponderTextField] resignFirstResponder];
@@ -128,6 +147,7 @@ NSMutableArray*inputTextFields;
  * 获取当前界面的根View
  **/
 -(UIView*)getRootView:(BOOL)useCache{
+    if (self.window!=nil)return self.window;
     if (rootView!=nil&&useCache)return rootView;
     UIView*superView;
     UIView*targetView=self;
@@ -142,5 +162,20 @@ NSMutableArray*inputTextFields;
     }
     return rootView=superView;
 }
-
+/**
+ * 获取view在窗口中的Y轴绝对位置
+ **/
+-(CGFloat)getAbsoluteY:(UIView*)view{
+    UIView*tempView=view;
+    CGFloat y;
+    while (true) {
+        y+=tempView.frame.origin.y;
+        if ([tempView.superview isMemberOfClass:[UIView class]]) {
+            tempView=tempView.superview;
+        }else{
+            break;
+        }
+    }
+    return y;
+}
 @end
